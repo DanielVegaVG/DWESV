@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../configdb.php';
+require "./configdb.php";
 
 function obtenerAsignaturas($conexion) {
     $consulta = 'SELECT nombre, color FROM asignatura';

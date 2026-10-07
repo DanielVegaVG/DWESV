@@ -3,7 +3,7 @@ require "configdb.php";
 require "./modelo/asignaturas.php";
 require "./controlador/c-asignatura.php";
 
-$asignaturas = Controlador::listar($conexion);
+$asignaturas = Controlador::listarmod($conexion);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,6 +24,7 @@ $asignaturas = Controlador::listar($conexion);
                 <td><?php echo $fila['nombre']; ?></td>
                 <td style="background-color:#<?php echo $fila['color']; ?>">
                     <?php echo $fila['color']; ?>
+                    <?php echo '<a href="">'?>
                 </td>
             </tr>
         <?php } ?>
