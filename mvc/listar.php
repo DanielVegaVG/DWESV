@@ -18,12 +18,16 @@ $asignaturas = Controlador::listar($conexion);
         <tr>
             <th>Nombre</th>
             <th>Color</th>
+            <th>Acciones</th>
         </tr>
         <?php foreach ($asignaturas as $fila) { ?>
             <tr>
                 <td><?php echo $fila['nombre']; ?></td>
                 <td style="background-color:#<?php echo $fila['color']; ?>">
                     <?php echo $fila['color']; ?>
+                </td>
+                <td>
+                    <a href="mod.php?id=<?php echo $fila['id']; ?>&nombre=<?php echo $fila['nombre']; ?>&color=<?php echo $fila['color']; ?>">M</a>
                 </td>
             </tr>
         <?php } ?>

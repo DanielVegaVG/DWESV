@@ -5,7 +5,17 @@ class Controlador {
             insertarAsignatura($conexion, $_POST['nombre'], $_POST['color']);
         }
     }
+
     public static function listar($conexion) {
         return obtenerAsignaturas($conexion);
     }
+
+    public static function obtener($conexion, $id) {
+        return obtenerAsignatura($conexion, $id);
+    }
+
+    public static function modificar($conexion, $id, $nombre, $color) {
+        return actualizarAsignatura($conexion, $id, $nombre, $color);
+    }
 }
+?>

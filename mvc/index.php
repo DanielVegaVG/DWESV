@@ -8,5 +8,6 @@
     <h1>Gestión de Asignaturas</h1>
     <a href="insertar.php">Añadir asignatura</a>
     <a href="listar.php">Listar asignaturas</a>
+    <a href="mod.php">Modificar</a>
 </body>
 </html>
