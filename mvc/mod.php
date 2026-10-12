@@ -6,14 +6,13 @@ require "./controlador/c-asignatura.php";
 $controlador = new Controlador();
 
 $id = $_GET['id'];
-$nombre = $_GET['nombre'];
-$color = $_GET['color'];
 
 if (isset($_GET['modificar'])) {
     $controlador->modificar($conexion, $id, $nombre, $color);
     header("Location: listar.php");
     exit;
 }
+$asignatura = $controlador->obtener($conexion, $id);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,10 +26,10 @@ if (isset($_GET['modificar'])) {
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <input type="hidden" name="modificar" value="1">
         <label>Nombre:</label>
-        <input type="text" name="nombre" value="<?php echo $nombre; ?>">
+        <input type="text" name="nombre" value="<?php echo $asignatura["nombre"]; ?>">
         <br>
         <label>Color:</label>
-        <input type="text" name="color" value="<?php echo $color; ?>">
+        <input type="text" name="color" value="<?php echo $asignatura["color"]; ?>">
         <br>
         <input type="submit"></input>
     </form>

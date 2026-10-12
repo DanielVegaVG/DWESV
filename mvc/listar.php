@@ -27,10 +27,10 @@ $asignaturas = $controlador->listar($conexion);
                     <?php echo $fila['color']; ?>
                 </td>
                 <td>
-                   <?php echo '<a href="mod.php?id='.$fila['id'].'"?>M</a>';?>
+                   <?php echo '<a href="mod.php?id='.$fila['id'].'">M</a>'; ?>
                 </td>
                 <td>
-                    <?php echo '<a href="eliminar.php?id='.$fila['id'].'"?>E</a>';?>
+                    <?php echo '<a href="eliminar.php?id='.$fila['id'].'">E</a>'; ?>
                 </td>
             </tr>
         <?php } ?>
