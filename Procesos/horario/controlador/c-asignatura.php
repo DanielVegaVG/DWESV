@@ -1,11 +1,14 @@
 <?php
 class ControladorAsignatura {
+    public $vista;
 
     public function listar($conexion) {
+        $this->vista = "../vista/v-listar_asignaturas.php";
         return obtenerAsignaturas($conexion);
     }
 
     public function pedirDatos() {
+        $this->vista = "../vista/v-form_asignatura.php";
         return null;
     }
 
@@ -15,18 +18,17 @@ class ControladorAsignatura {
             exit;
         }
 
-        $nombre= $_POST['nombre'] ?? '';
+        $nombre = $_POST['nombre'] ?? '';
         $abreviatura = $_POST['abreviatura'] ?? '';
-        $id= $_POST['id'] ?? null;
+        $id = $_POST['id'] ?? null;
 
         if ($id !== null) {
             actualizarAsignatura($conexion, $id, $nombre, $abreviatura);
         } else {
             insertarAsignatura($conexion, $nombre, $abreviatura);
         }
-
         header('Location: listar_asignaturas.php');
-        exit;
+        $this->vista = "../vista/v-listar_asignaturas.php";
     }
 
     public function borrar($conexion, $id) {
@@ -35,10 +37,12 @@ class ControladorAsignatura {
             header('Location: listar_asignaturas.php');
             exit;
         }
+        $this->vista = "../vista/v-confirmar_borrado_asignatura.php";
         return obtenerAsignatura($conexion, $id);
     }
 
     public function mostrarParaModificar($conexion, $id) {
+        $this->vista = "../vista/v-form_asignatura.php";
         return obtenerAsignatura($conexion, $id);
     }
 }

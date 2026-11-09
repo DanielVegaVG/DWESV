@@ -5,5 +5,5 @@ require "../controlador/c-asignatura.php";
 
 $controlador = new ControladorAsignatura();
 $asignatura = $controlador->pedirDatos();
-require "../vista/v-form_asignatura.php";
+include $controlador->vista;
 ?>

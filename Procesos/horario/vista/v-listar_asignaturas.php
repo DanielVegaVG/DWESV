@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>Listado asignaturas</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Listado asignaturas</title>
+</head>
 <body>
     <h1>Listado de asignaturas</h1>
     <p><a href="../procesos/pedir_datos_asignaturas.php">+ Nueva asignatura</a></p>
@@ -18,7 +21,7 @@
         <?php } ?>
         <?php if (empty($asignaturas)) { ?>
             <tr><td colspan="3">No hay asignaturas.</td></tr>
-        <?php } ?>
+        <?php } ?>  
     </table>
 </body>
 </html>
