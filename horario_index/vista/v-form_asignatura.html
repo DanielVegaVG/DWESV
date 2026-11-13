@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Añadir Asignatura</h1>
+    <form method="POST" action="../index.php?controlador=../controlador/c_asignatura&metodo=guardar">
+        <input type="text" name="nombre" minlength="10" placeholder="Nombre" require><br>
+        <input type="text" name="abreviatura" minlength="3" maxlength="6" placeholder="Abreviatura (máx 6)" require><br>
+        <input type="submit" value="Añadir"></input>
+    </form>
+    <p><a href="../index.php?controlador=../controlador/c_asignatura&metodo=listar">Volver al listado</a></p>
+</body>
+</html>
